@@ -1,0 +1,13 @@
+.chatBox {
+  width: 30rem;
+  margin: 5rem auto;
+  height: 30px;
+  border: 1px solid #333;
+  padding: 1rem;
+}
+
+@media (max-width: 786px) {
+  .chatBox {
+    width: 100%;
+  }
+}
