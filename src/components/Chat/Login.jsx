@@ -1,4 +1,5 @@
-import { FiAtSign, FiLock } from "react-icons/fi";
+import { FiAtSign, FiLock, FiGithub } from "react-icons/fi";
+import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import Input from "./Input";
@@ -44,6 +45,14 @@ const Login = () => {
             />
 
             <Button title="Login" />
+            <div className="withaccount">
+              <span>
+                <FcGoogle />
+              </span>
+              <span>
+                <FiGithub />
+              </span>
+            </div>
             <p className="redirect_enroll">
               Don't have account?{" "}
               <Link to="/enroll" className="redirect_link">

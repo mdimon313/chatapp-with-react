@@ -1,4 +1,5 @@
-import { FiAtSign, FiLock, FiUser } from "react-icons/fi";
+import { FiAtSign, FiLock, FiUser, FiGithub } from "react-icons/fi";
+import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import Input from "./Input";
@@ -47,6 +48,14 @@ const Reg = () => {
             />
 
             <Button title="Sign Up" />
+            <div className="withaccount">
+              <span>
+                <FcGoogle />
+              </span>
+              <span>
+                <FiGithub />
+              </span>
+            </div>
             <p className="redirect_enroll">
               Already have an account?{" "}
               <Link to="/" className="redirect_link">
@@ -54,6 +63,7 @@ const Reg = () => {
               </Link>
               .
             </p>
+            <Link to="/chat">Chat</Link>
           </form>
         </div>
       </div>

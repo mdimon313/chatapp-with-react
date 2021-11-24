@@ -1,7 +1,20 @@
+import { useState } from "react";
 import { FiArrowLeft, FiInfo, FiSend } from "react-icons/fi";
 import profile from "../../assets/img/bg2.jpg";
+import ChatText from "./ChatText";
 
 const ChatBox = () => {
+  const [message, setMessage] = useState("");
+  const [displayMessage, setDisplayMessage] = useState("");
+
+  const cng = (e) => setMessage(e.target.value);
+
+  const handleChatInput = (e) => {
+    e.preventDefault();
+    setDisplayMessage(message);
+    console.log(message);
+    setMessage("");
+  };
   return (
     <>
       <div className="container">
@@ -26,39 +39,24 @@ const ChatBox = () => {
               </div>
             </div>
             <div className="chatMain">
-              <div className="text">
-                <div className="user">
-                  <span>
-                    <img
-                      src={profile}
-                      alt="user-profile"
-                      title="Niamul Haq Siyam"
-                    />
-                    {/* <FiUser /> */}
-                  </span>
-                </div>
-                <p className="msg" title="Niamul Haq Siyam">
-                  Hello How are you 1
-                </p>
-              </div>
-
-              <div className="text me">
-                <p className="msg-me" title="me">
-                  I'm Fine. and You...?
-                </p>
-              </div>
+              <ChatText
+                className="me"
+                message={!displayMessage ? null : displayMessage}
+              />
             </div>
             <div className="chat_footer">
-              <form>
+              <form onSubmit={handleChatInput}>
                 <div className="chat_write">
                   <textarea
                     className="input"
+                    onChange={cng}
+                    value={message}
                     type="text"
                     placeholder="type message.."
                   ></textarea>
-                  <span className="send_btn">
+                  <button type="submit" className="send_btn">
                     <FiSend />
-                  </span>
+                  </button>
                 </div>
               </form>
             </div>
