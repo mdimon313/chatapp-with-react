@@ -58,8 +58,6 @@ const Reg = () => {
         </div>
       </div>
     </section>
-
-    // https://image.freepik.com/free-vector/mention-concept-illustration_114360-231.jpg
   );
 };
 
